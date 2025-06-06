@@ -11,9 +11,10 @@ import java.util.List;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class RoomDTO {
 
+    private Long id;
     private String roomType;
     private String roomPrice;
     private String roomPhotoUrl;
     private String roomDescription;
-    private List<Booking> bookings;
+    private List<BookingDTO> bookings;
 }

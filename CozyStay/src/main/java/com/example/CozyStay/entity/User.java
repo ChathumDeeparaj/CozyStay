@@ -31,10 +31,12 @@ public class User implements UserDetails {
     @Column(unique = true)
     private String phoneNumber;
 
+    @NotBlank(message = "password is Required")
     private String password;
+
     private String role;
 
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true,fetch = FetchType.LAZY)
     private List<Booking> bookings = new ArrayList<>();
 
     @Override
