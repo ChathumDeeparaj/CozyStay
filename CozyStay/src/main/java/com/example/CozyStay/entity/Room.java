@@ -18,7 +18,6 @@ public class Room {
     private String roomPrice;
     private String roomPhotoUrl;
     private String roomDescription;
-
     @OneToMany(mappedBy = "room", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Booking> bookings = new ArrayList<>();
 
